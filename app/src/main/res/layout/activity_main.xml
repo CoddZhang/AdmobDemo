@@ -1,18 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btn_load_reward_ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="加载激励广告"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_load_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="激励广告未加载"
+        app:layout_constraintEnd_toEndOf="@+id/btn_load_reward_ad"
+        app:layout_constraintStart_toStartOf="@+id/btn_load_reward_ad"
+        app:layout_constraintTop_toBottomOf="@+id/btn_load_reward_ad" />
+
+    <Button
+        android:id="@+id/btn_show_reward_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="显示激励广告"
+        app:layout_constraintEnd_toEndOf="@+id/tv_load_status"
+        app:layout_constraintStart_toStartOf="@+id/tv_load_status"
+        app:layout_constraintTop_toBottomOf="@+id/tv_load_status" />
+
+    <Button
+        android:id="@+id/btn_load_native_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:text="加载原生广告"
+        app:layout_constraintEnd_toEndOf="@+id/btn_show_reward_ad"
+        app:layout_constraintStart_toStartOf="@+id/btn_show_reward_ad"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_reward_ad" />
+
+    <include layout="@layout/native_ad"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_load_native_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
