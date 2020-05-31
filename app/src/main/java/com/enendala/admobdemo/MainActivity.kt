@@ -101,4 +101,10 @@ class MainActivity : AppCompatActivity() {
 
         Glide.with(this).load(nativeAd?.icon?.uri).into(iv_icon)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        AdmobManager.release()
+    }
 }

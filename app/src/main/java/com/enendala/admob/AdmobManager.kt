@@ -235,4 +235,12 @@ object AdmobManager {
 
         nativeAdRepo.removeLoadListener(listener)
     }
+
+    /**
+     * 释放广告相关资源
+     */
+    fun release() {
+        rewardedAdRepoMap.clear()
+        nativeAdRepoMap.clear()
+    }
 }
